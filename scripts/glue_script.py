@@ -1,7 +1,12 @@
-from sessionCreation import *
+import os
+import csv
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import *
+from pyspark.sql.types import *
+
 
 # Spark session created.
-spark = sparkSession()
+spark = SparkSession.builder.appName('first').master('local[*]').getOrCreate()
 
 input_path = "s3://mybucket-20240529-new/input/sample.csv"
 df = spark.read.format('csv').option('header','ture').load(input_path)
