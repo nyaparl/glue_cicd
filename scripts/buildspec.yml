@@ -28,3 +28,12 @@ Resources:
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/AmazonS3FullAccess
         - arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole
+
+  Parameters:
+  ProjectId:
+    Description: Codepipeline cloudformation test
+    Type: String
+  Stage:
+    Default: ''
+    Description: I am guessing some thing goes here
+    Type: String
