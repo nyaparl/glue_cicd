@@ -6,12 +6,12 @@ Resources:
       Role: !GetAtt GlueServiceRole.Arn
       Command:
         Name: glueetl
-        ScriptLocation: s3://mygluecicd-20240528-01/scripts/scripts/glue_script.py
+        ScriptLocation: s3://mybucket-20240529-new/scripts/glue_script.py
       DefaultArguments:
-        "--TempDir": "s3://mygluecicd-20240528-01/temp/"
+        "--TempDir": "s3://mybucket-20240529-new/temp/"
       GlueVersion: "2.0"
       WorkerType: G.1X
-      NumberOfWorkers: 3
+      NumberOfWorkers: 2
 
 
   GlueServiceRole:
